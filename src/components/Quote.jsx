@@ -7,7 +7,7 @@ export default function Quote() {
     author: "",
   });
 
-  const [selectedFont, setSeletedFont] = useState("Open Sans");
+  const [selectedFont, setSeletedFont] = useState("system-ui");
 
   function generateQuote() {
     fetch("https://api.quotable.io/quotes/random")
@@ -24,18 +24,34 @@ export default function Quote() {
 
   return (
     <main>
-      <div>
+      <div className="container">
         <div className="form">
-          <select value={selectedFont} onChange={handleFontChange}>
+          <select
+            className="font-selector"
+            value={selectedFont}
+            onChange={handleFontChange}
+            style={{ fontFamily: selectedFont }}
+          >
+            <option value="" style={{ fontFamily: "system-ui" }}>
+              -- choose a font --
+            </option>
             {fonts.map((font) => (
-              <option value={font}>{font}</option>
+              <option value={font} style={{ fontFamily: font }}>
+                {font}
+              </option>
             ))}
           </select>
-          <button onClick={generateQuote}>Generate a new quote!</button>
+          <br />
+          <button className="quote-button" onClick={generateQuote}>
+            Generate a new quote!
+          </button>
         </div>
+
         <div className="quote-text" style={{ fontFamily: selectedFont }}>
-          {quote.content && <h2>{quote.content}</h2>}
-          {quote.author && <h3> {quote.author}</h3>}
+          {quote.content && <h1 className="quotation-mark-top">❝</h1>}
+          {quote.content && <h2 className="quote-content">{quote.content}</h2>}
+          {quote.author && <h3 className="quote-author">- {quote.author} -</h3>}
+          {quote.content && <h1 className="quotation-mark-bottom">❞</h1>}
         </div>
       </div>
     </main>

@@ -1,4 +1,122 @@
-#root {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 20px 20px;
+  background-color: #f5f1e5;
+  color: #282725;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.header {
+  background-color: #727e74;
+  color: #ffffff;
+  font-family: Bentham, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.header-title {
+  font-size: 2em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0px auto;
+  padding: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.font-selector {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quote-button {
+  font-size: 1em;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #8b9a8e;
+  color: #ffffff;
+  padding: 10px;
+  font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  line-height: normal;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.quote-text {
+  margin-top: 30px;
+  text-align: center;
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #282725;
+}
+
+.quotation-mark-top,
+.quotation-mark-bottom {
+  font-size: 1.5em;
+}
+
+.quote-content {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.quote-author {
+  font-size: 1.2em;
+}
+
+.font-selector option {
+  /* Apply the font family to each option */
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+/* Responsive layout */
+@media screen and (min-width: 768px) {
+  .form {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .font-selector {
+    width: 40%;
+  }
+
+  .quote-button {
+    width: 40%;
+  }
+
+  .quote-text {
+    margin-top: 20px;
+  }
 }
